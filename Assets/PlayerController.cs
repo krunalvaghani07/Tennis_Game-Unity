@@ -39,7 +39,8 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Ball"))
         {
             Vector3 direction = targetTransform.position - transform.position;
-            other.GetComponent<Rigidbody>().velocity = direction.normalized * 12 + new Vector3(0,6,0);
+            other.GetComponent<Rigidbody>().velocity = direction.normalized * 15 + new Vector3(0,6,0);
+            
         }
     }
 }
