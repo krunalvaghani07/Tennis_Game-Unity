@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.H))
         {
             isHitting = true;
-        }else if (Input.GetKeyDown(KeyCode.H))
+        }else if (Input.GetKeyUp(KeyCode.H))
         {
             isHitting= false;
         }
@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Ball"))
         {
             Vector3 direction = targetTransform.position - transform.position;
-            other.GetComponent<Rigidbody>().velocity = direction.normalized * 13 + new Vector3(0,6,0);
+            other.GetComponent<Rigidbody>().velocity = direction.normalized * 12 + new Vector3(0,6,0);
         }
     }
 }
