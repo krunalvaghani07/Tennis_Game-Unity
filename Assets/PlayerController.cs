@@ -27,8 +27,10 @@ public class PlayerController : MonoBehaviour
         }
         if (isHitting)
         {
+            //set hitting target
             targetTransform.Translate(new Vector3 (horizontalMove, 0,0) * playerSpeed * Time.deltaTime);
         }
+        //move player based on arrow keys
         if ((horizontalMove != 0 || verticalMove != 0) && !isHitting)
         {
             transform.Translate(new Vector3 (horizontalMove,0 ,verticalMove) * playerSpeed * Time.deltaTime);
@@ -38,7 +40,9 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Ball"))
         {
+            //ball direction
             Vector3 direction = targetTransform.position - transform.position;
+            //hit the ball
             other.GetComponent<Rigidbody>().velocity = direction.normalized * 15 + new Vector3(0,6,0);
             
         }
